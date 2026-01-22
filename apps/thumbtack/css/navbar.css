@@ -1,0 +1,21 @@
+#navbar {
+    display: flex;
+    height: 45px;
+    background-color: #3e3e3e;
+}
+
+#navbar button {
+    min-width: 60px;
+    border: none;
+}
+#navbar button:hover {
+    filter: brightness(1.2);
+    cursor: pointer;
+}
+
+#navActive {
+    min-width: 100px;
+    background-color: #1e87ff;
+    color: white;
+    font-weight: bold;
+}
