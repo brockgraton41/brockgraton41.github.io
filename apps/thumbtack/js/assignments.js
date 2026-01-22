@@ -27,7 +27,7 @@ class Assignment {
 function deleteAssignment(assignmentElement, index) {
     assignmentElement.remove();
     assignments.splice(index, 1);
-    synchronizeAndRender();
+    saveAndRender();
 }
 
 /**
@@ -35,16 +35,25 @@ function deleteAssignment(assignmentElement, index) {
  * @param {number} _index The index of the assignment to edit.
 */
 function editAssignment(_index) {
-    alert("Unimplemented, sorry :( It should work after I add the edit dialog.")
+    alert("Unimplemented, sorry :(")
 }
 
 /**
- * Synchronizes the `assignments` array with the DOM.
- * Should be called after any changes to the array.
- * 
- * **Lead developer's note:** Could possibly be optimized in the future.
-*/
-function synchronizeAndRender() {
+ * Saves the current assignment array to storage.
+ */
+function saveAssignments() {
+    try {
+        localStorage.setItem("assignments", JSON.stringify(assignments));
+    } catch (error) {
+        const errorMessage = error instanceof Error ? error.message : "Unknown error";
+        alert(`Error: ${errorMessage}`);
+    }
+}
+
+/**
+ * Renders (or rerenders) the assignments in the DOM.
+ */
+function renderAssignments() {
     const container = document.getElementById("assignments");
     container.innerHTML = "";
     
@@ -87,15 +96,13 @@ function synchronizeAndRender() {
 }
 
 /**
- * Saves the current assignment array to storage.
- */
-function saveAssignments() {
-    try {
-        localStorage.setItem("assignments", JSON.stringify(assignments));
-    } catch (error) {
-        const errorMessage = error instanceof Error ? error.message : "Unknown error";
-        alert(`Error: ${errorMessage}`);
-    }
+ * Both saves the array and renders the assignments.
+ * @see `renderAssignments`
+ * @see `saveAssignments`
+*/
+function saveAndRender() {
+    saveAssignments();
+    renderAssignments();
 }
 
 // Set up autosave before unloading the page.
@@ -107,4 +114,4 @@ window.addEventListener("beforeunload", () => saveAssignments());
  */
 let assignments = JSON.parse(localStorage.getItem("assignments")) || [];
 
-synchronizeAndRender();
+saveAndRender();
