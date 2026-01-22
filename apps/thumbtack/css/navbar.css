@@ -19,3 +19,7 @@
     color: white;
     font-weight: bold;
 }
+
+.navRight {
+    margin-left: auto;
+}
