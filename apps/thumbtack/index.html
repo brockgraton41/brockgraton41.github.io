@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Thumbtack&mdash;Under construction</title>
+</head>
+<body>
+    <div id="navbar">
+    <button>TwistedHambone</button>
+    <!-- <button id="expandNavIcon" onclick="expandNavbar()">Expand</button> Responsiveness not added yet -->
+    </div>
+
+    <div id="assignments"></div>
+
+    <dialog id="newEditDialog">
+        <form id="newEditForm" method="dialog">
+            <span>New/Edit Assignment</span>
+            <input type="text" name="name" id="newEditName" placeholder="Name" required>
+            <input type="text" name="course" id="newEditCourse" placeholder="Course" required>
+            <input type="number" name="worth" id="newEditWorth" placeholder="Worth (points)" required>
+            <input type="text" name="progress" id="newEditProgress" placeholder="Progress (x/y units)" required>
+            <input type="date" name="deadline" id="newEditDeadline" required>
+
+            <button onclick="closeNewEditDialog()">Cancel</button>
+            <button type="submit">Confirm</button>
+        </form>
+    </dialog>
+    <button onclick="showNewEditDialog()">New...</button>
+
+    <script src="js/assignments.js"></script>
+    <script src="js/newEditDialog.js" defer></script>
+    <!-- <script src="js/navbar.js"></script> (no navbar functionality yet) -->
+</body>
+</html>
