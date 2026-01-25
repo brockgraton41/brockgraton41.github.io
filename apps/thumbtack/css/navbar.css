@@ -1,7 +1,8 @@
 #navbar {
     display: flex;
     height: 45px;
-    background-color: #3e3e3e;
+    background: linear-gradient(to bottom, #4e4e4e, #2e2e2e);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 #navbar button {
