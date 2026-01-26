@@ -1,9 +1,18 @@
-const assignmentForm = document.getElementById("newEditForm");
+/**
+ * A reference to the New/Edit Assignment dialog.
+ */
+const newEditDialog = newEditDialog;
 
-assignmentForm.addEventListener("submit", (e) => {
+/**
+ * The reference to the form of the New/Edit Assignment dialog.
+ */
+const newEditForm = document.getElementById("newEditForm");
+
+// Processes the data from the form.
+newEditForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    const data = new FormData(assignmentForm);
+    const data = new FormData(newEditForm);
     
     const assignment = new Assignment(
         data.get("name"),
@@ -16,14 +25,20 @@ assignmentForm.addEventListener("submit", (e) => {
 
     saveAndRender();
 
-    assignmentForm.reset();
-    document.getElementById("newEditDialog").close();
+    newEditForm.reset();
+    newEditDialog.close();
 });
 
+/**
+ * Shows the New/Edit Assignment dialog.
+ */
 function showNewEditDialog() {
-    document.getElementById("newEditDialog").showModal();
+    newEditDialog.showModal();
 }
 
+/**
+ * Shows the New/Edit Assignment dialog.
+ */
 function closeNewEditDialog() {
-    document.getElementById("newEditDialog").close();
+    newEditDialog.close();
 }
