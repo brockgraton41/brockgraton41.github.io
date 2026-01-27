@@ -1,7 +1,7 @@
 /**
  * A reference to the New/Edit Assignment dialog.
  */
-const newEditDialog = newEditDialog;
+const newEditDialog = document.getElementById("newEditDialog");
 
 /**
  * The reference to the form of the New/Edit Assignment dialog.
@@ -13,7 +13,7 @@ newEditForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
     const data = new FormData(newEditForm);
-    
+
     const assignment = new Assignment(
         data.get("name"),
         data.get("course"),
