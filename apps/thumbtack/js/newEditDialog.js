@@ -1,3 +1,5 @@
+import { assignments } from "./assignments.js";
+
 /**
  * A reference to the New/Edit Assignment dialog.
  */

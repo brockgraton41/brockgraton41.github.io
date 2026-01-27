@@ -56,7 +56,7 @@ function saveAssignments() {
 function renderAssignments() {
     const container = document.getElementById("assignments");
     container.innerHTML = "";
-    
+
     assignments.forEach((assignment, index) => {
         const div = document.createElement("div");
         const name = document.createElement("b");
@@ -112,6 +112,6 @@ window.addEventListener("beforeunload", () => saveAssignments());
  * The assignments array.
  * @type Assignment[]
  */
-let assignments = JSON.parse(localStorage.getItem("assignments")) || [];
+export let assignments = JSON.parse(localStorage.getItem("assignments")) || [];
 
 saveAndRender();

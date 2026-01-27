@@ -1,4 +1,4 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-app.js";
+import { initializeApp } from "firebase/app";
 // TODO: Add Firebase SDKs from https://firebase.google.com/docs/web/setup#available-libraries
 
 /**
