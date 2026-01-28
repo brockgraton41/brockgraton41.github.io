@@ -1,4 +1,4 @@
-import { assignments } from "./assignments.js";
+import * as assignments from "./assignments.js";
 
 /**
  * A reference to the New/Edit Assignment dialog.
@@ -16,31 +16,27 @@ newEditForm.addEventListener("submit", (e) => {
 
     const data = new FormData(newEditForm);
 
-    const assignment = new Assignment(
+    const assignment = new assignments.Assignment(
         data.get("name"),
         data.get("course"),
         data.get("progress"),
         data.get("worth"),
         data.get("deadline")
     );
-    assignments.push(assignment);
+    assignments.assignments.push(assignment);
 
-    saveAndRender();
+    assignments.saveAndRender();
 
     newEditForm.reset();
     newEditDialog.close();
 });
 
-/**
- * Shows the New/Edit Assignment dialog.
- */
-function showNewEditDialog() {
+// Sets up the dialog open button.
+document.getElementById("newEditButton").addEventListener("click", () => {
     newEditDialog.showModal();
-}
+});
 
-/**
- * Shows the New/Edit Assignment dialog.
- */
-function closeNewEditDialog() {
+// Set up the dialog close button.
+document.getElementById("newEditCancel").addEventListener("click", () => {
     newEditDialog.close();
-}
+});

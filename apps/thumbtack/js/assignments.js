@@ -1,7 +1,7 @@
 /**
  * An assignment.
  */
-class Assignment {
+export class Assignment {
     /**
      * Creates a new `Assignment`.
      * @param {*} name The name of the assignment.
@@ -100,7 +100,7 @@ function renderAssignments() {
  * @see `renderAssignments`
  * @see `saveAssignments`
 */
-function saveAndRender() {
+export function saveAndRender() {
     saveAssignments();
     renderAssignments();
 }
